@@ -16,34 +16,18 @@
 	 * header
 	 * --------------------------------------------------*/
 	
-	// function mark_menu() {
-	// 	var currentPath = window.location.pathname;
-		
-	// 	jQuery('#mainmenu li a').removeClass('active').each(function () {
-	// 		if (jQuery(this).attr('href') === currentPath) {
-	// 			jQuery(this).addClass('active');
-	// 		}
-	// 	});
-	// }
-	function mark_menu() {
-		var currentFile = window.location.pathname.split('/').pop();
-		var foundMatch = false;
-		
+	function mark_menu(){
 		jQuery('#mainmenu li a').each(function () {
-			jQuery(this).removeClass('active');
-			
-			var linkHref = jQuery(this).attr('href');
-			var linkFile = linkHref.split('/').pop();
-			
-			if (currentFile === linkFile) {
-				jQuery(this).addClass('active');
-				foundMatch = true;
-			}
-		});
-		
-		if (!foundMatch) {
-			jQuery('#mainmenu li:first-child a').addClass('active');
-		}
+                if (this.href.indexOf('#') != -1) {
+					jQuery(this).removeClass('active');
+                    var href = jQuery(this).attr('href');
+                    if (window.location.hash==href) {
+                        jQuery(this).addClass('active');
+                    }
+                }else{
+						jQuery('#mainmenu li:first-child a').addClass('active');
+				}
+            });
 	}
 	/* --------------------------------------------------
 	 * plugin | magnificPopup
@@ -164,18 +148,18 @@
 	}
 	/* pf active */
 	
-	function pf_active(){
-		var currentFile = window.location.href.split('/').pop();
+	// function pf_active(){
+	// 	var currentFile = window.location.href.split('/').pop();
 		
-		if(currentFile === "projects.html"){
-			setTimeout(function(){
-				$('.social-icons-fixed,.page-deco').addClass('pf-click');
-			}, 900);			
-			setTimeout(function(){
-				$('.pf-nav.left,.pf-nav.right').addClass('pf-click');
-			}, 1000);					
-		}
-	}
+	// 	if(currentFile === "projects.html"){
+	// 		setTimeout(function(){
+	// 			$('.social-icons-fixed,.page-deco').addClass('pf-click');
+	// 		}, 900);			
+	// 		setTimeout(function(){
+	// 			$('.pf-nav.left,.pf-nav.right').addClass('pf-click');
+	// 		}, 1000);					
+	// 	}
+	// }
 	
 	/* --------------------------------------------------
 	 * plugin | enquire.js
@@ -423,6 +407,7 @@
 			transitionStyle: "fade"
 		});
 		// Custom Navigation owlCarousel
+
 		$(".pf-nav.left").on("click", function() {
 			$('#album-carousel-2').trigger('prev.owl.carousel');
 		});
@@ -1090,6 +1075,7 @@
 		init_de();
 		init_resize();
 		de_progress();
+		// pf_active();
 		// --------------------------------------------------
 		// custom positiion
 		// --------------------------------------------------
@@ -1224,7 +1210,7 @@
 			init();
 			// pf_active();
 			// hide preloader after loaded
-			jQuery('#preloader').fadeOut(500);			
+			jQuery('#preloader').fadeOut(500);
 			// one page navigation
 			/**
 			 * This part causes smooth scrolling using scrollto.js
@@ -1268,9 +1254,7 @@
 			$container.isotope({
 				itemSelector: '.item',
 				filter: '*'
-			});
-			
-			// pf_active();			
+			});		
 			
 		});
 		
@@ -1285,7 +1269,7 @@
 		jQuery('#content').css('height',jQuery(hash).css('height'));
 		
 		jQuery(hash).find('.img-url').addClass('to-size');
-		
+			
 
 		mark_menu();
 		
