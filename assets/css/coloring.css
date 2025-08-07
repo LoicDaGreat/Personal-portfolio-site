@@ -184,6 +184,7 @@ a.btn-line.hover,
 .de_tab.tab_style_4 .de_nav,
 .social-icons i:hover,
 .tags li,
+div.progress-bar,
 a.btn-download:hover {
     border-color: var(--main-color);
 }
