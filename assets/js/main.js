@@ -25,25 +25,32 @@
 	// 		}
 	// 	});
 	// }
-	function mark_menu() {
-		var currentFile = window.location.pathname.split('/').pop();
-		var foundMatch = false;
+	function mark_menu(){
+		jQuery('#mainmenu li a').removeClass('active');
 		
 		jQuery('#mainmenu li a').each(function () {
-			jQuery(this).removeClass('active');
-			
-			var linkHref = jQuery(this).attr('href');
-			var linkFile = linkHref.split('/').pop();
-			
-			if (currentFile === linkFile) {
-				jQuery(this).addClass('active');
-				foundMatch = true;
+			if (this.href.indexOf('#') != -1) {
+				var href = jQuery(this).attr('href');
+				if (window.location.hash == href) {
+					jQuery(this).addClass('active');
+				}
+			} else {
+				var isExternal = this.hostname && this.hostname !== window.location.hostname;
+				
+				if (isExternal) {
+					if (this.href === window.location.href) {
+						jQuery(this).addClass('active');
+					}
+				} else {
+					var currentPage = window.location.pathname.split('/').pop();
+					var linkPage = this.href.split('/').pop();
+					
+					if (currentPage === linkPage) {
+						jQuery(this).addClass('active');
+					}
+				}
 			}
 		});
-		
-		if (!foundMatch) {
-			jQuery('#mainmenu li:first-child a').addClass('active');
-		}
 	}
 	/* --------------------------------------------------
 	 * plugin | magnificPopup
@@ -1289,11 +1296,11 @@
 
 		mark_menu();
 		
-		if(!window.location.hash){
-			if($('body').hasClass('homepage')){
-				jQuery('#mainmenu li:first-child a').addClass('active');
-			}
-		}
+		// if(!window.location.hash){
+		// 	if($('body').hasClass('homepage')){
+		// 		jQuery('#mainmenu li:first-child a').addClass('active');
+		// 	}
+		// }
 		
 		});
 		/* --------------------------------------------------
