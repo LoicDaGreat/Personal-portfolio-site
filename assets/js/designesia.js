@@ -17,17 +17,31 @@
 	 * --------------------------------------------------*/
 	
 	function mark_menu(){
+		// jQuery('#mainmenu li a').removeClass('active');
+		
 		jQuery('#mainmenu li a').each(function () {
-                if (this.href.indexOf('#') != -1) {
-					jQuery(this).removeClass('active');
-                    var href = jQuery(this).attr('href');
-                    if (window.location.hash==href) {
-                        jQuery(this).addClass('active');
-                    }
-                }else{
-						jQuery('#mainmenu li:first-child a').addClass('active');
+			if (this.href.indexOf('#') != -1) {
+				var href = jQuery(this).attr('href');
+				if (window.location.hash == href) {
+					jQuery(this).addClass('active');
 				}
-            });
+			} else {
+				var isExternal = this.hostname && this.hostname !== window.location.hostname;
+				
+				if (isExternal) {
+					if (this.href === window.location.href) {
+						jQuery(this).addClass('active');
+					}
+				} else {
+					var currentPage = window.location.pathname.split('/').pop();
+					var linkPage = this.href.split('/').pop();
+					
+					if (currentPage === linkPage) {
+						jQuery(this).addClass('active');
+					}
+				}
+			}
+		});
 	}
 	/* --------------------------------------------------
 	 * plugin | magnificPopup
