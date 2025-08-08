@@ -67,6 +67,7 @@ body {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
 	overflow:hidden;
+    flex: 1;
 }
 
 .fullwidth #main{
@@ -875,6 +876,10 @@ header.header-mobile.header-light #menu-btn {
 
 .content-wrap{
 	padding:100px 60px 90px 60px; 
+}
+
+.contact-wrap {
+    padding: 300px 60px 285px 60px;
 }
 
 /* ================================================== */
