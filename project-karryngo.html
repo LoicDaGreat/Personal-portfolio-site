@@ -18,59 +18,74 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/css/gallery.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/coloring.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/coloring.css" type="text/css">
 
     <!-- color scheme -->
     <link rel="stylesheet" href="assets/css/colors/kleekle.css" type="text/css">
 
     <style>
         :root {
-            --karryngo-blue: #0d3c8a;
-            --karryngo-orange: #f58c1f;
-            --karryngo-white: #f7f7f8;
+            --karryngo-black: #000000;
+            --karryngo-white: #ffffff;
+            --karryngo-yellow: #FECD0B;
+        }
+
+        body {
+            background-color: var(--karryngo-white);
+            color: var(--karryngo-black);
         }
 
         .padding60[data-bgcolor="#151515"] {
-            background-color: var(--karryngo-blue) !important;
+            background-color: var(--karryngo-black) !important;
         }
 
         .padding60[data-bgcolor="#151515"] .sm-info,
-        .padding60[data-bgcolor="#151515"] .sm-info span {
+        .padding60[data-bgcolor="#151515"] .sm-info span,
+        .padding60[data-bgcolor="#151515"] .sm-info span a {
             color: var(--karryngo-white);
         }
 
         .padding60[data-bgcolor="#151515"] .sm-info span {
-            border-bottom: 1px solid rgba(255,255,255,0.25);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
         #mainmenu a.active,
-        #mainmenu a:hover {
-            color: var(--karryngo-orange);
+        #mainmenu a:hover,
+        #mainmenu a:focus {
+            color: var(--karryngo-yellow);
         }
 
         .color span[data-bgcolor="#2C3383"] {
-            background-color: var(--karryngo-blue) !important;
+            background-color: var(--karryngo-black) !important;
         }
 
         .color span[data-bgcolor="#F37277"] {
-            background-color: var(--karryngo-orange) !important;
+            background-color: var(--karryngo-yellow) !important;
         }
 
         .color span[data-bgcolor="#FFFFFF"] {
             background-color: var(--karryngo-white) !important;
+            border: 1px solid rgba(0,0,0,0.15);
         }
 
         h3 {
-            color: var(--karryngo-blue);
+            color: var(--karryngo-black);
+        }
+
+        .btn-download,
+        .btn-download.light {
+            border-color: var(--karryngo-yellow);
+            color: var(--karryngo-black);
+            background: var(--karryngo-yellow);
         }
     </style>
 </head>
 
 <body>
 <div id="wrapper" class="fullwidth no-padding">
-	
-		<div id="bg-overlay"></div>
-		
+    
+        <div id="bg-overlay"></div>
+        
         <div id="main">
 
             <!-- TOP BAR BEGIN -->
@@ -91,10 +106,10 @@
                 </nav>
 
                 <span id="menu-btn">
-					<span class="lt"></span>
-					<span class="lm"></span>
-					<span class="lb"></span>
-				</span>
+                    <span class="lt"></span>
+                    <span class="lm"></span>
+                    <span class="lb"></span>
+                </span>
 
                 <div id="mp-col">
                     <a href="files/Loic_Nkeng_CV.pdf" class="btn-download light"><span class="id-color"><i class="fa fa-file-pdf-o"></i></span>Download CV</a>
@@ -109,57 +124,58 @@
             <div id="content">
                 <!-- section begin -->
                 <section class="fluid">
-					<div class="full-height section" data-bgimage="url(assets/images/projects/pf5/2.jpg)" data-stellar-background-ratio=".2">
-						<div class="center-y text-center">
-							<div class="h1_big">
+                    <div class="full-height section" data-bgimage="url(assets/images/projects/pf5/2.jpg)" data-stellar-background-ratio=".2">
+                        <div class="center-y text-center">
+                            <div class="h1_big">
                                 <div class="typed-strings">
                                     <p>Kleekle</p>
                                 </div>
                                 <div class="typed"></div>
-							</div>
-							
-							<span class="mouse">
-								<span class="scroll"></span>
-							</span>
-						</div>
-					</div>
-					
+                            </div>
+                            
+                            <span class="mouse">
+                                <span class="scroll"></span>
+                            </span>
+                        </div>
+                    </div>
+                    
                     <div id="details" class="container-fluid">
                         <div class="row no-gutters">
-							<div class="padding60" data-bgcolor="#151515">
-									<div class="col-md-3">
-										<div class="sm-info">
-											<span>Date</span>
-											Jan 2021
-										</div>
-									</div>
-									
-									<div class="col-md-3">
-										<div class="sm-info">
-											<span>Client</span>
-											Moody and Smith Digital
-										</div>
-									</div>
-									
-									<div class="col-md-3">
-										<div class="sm-info">
-											<span>Role</span>
-											Junior Web Developer
-										</div>
-									</div>
-									
-									<div class="col-md-3">
-										<div class="sm-info">
-											<span>URL</span>
-											www.kleekle.co.za
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							
+                            
+                            <div class="padding60" data-bgcolor="#151515">
+                                    <div class="col-md-3">
+                                        <div class="sm-info">
+                                            <span>Date</span>
+                                            Jan 2021
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                        <div class="sm-info">
+                                            <span>Client</span>
+                                            Moody and Smith Digital
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                        <div class="sm-info">
+                                            <span>Role</span>
+                                            Junior Web Developer
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                        <div class="sm-info">
+                                            <span>URL</span>
+                                            www.kleekle.co.za
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            
                             <div class="padding60">
                                
-							<div class="col-md-4">
+                                <div class="col-md-4">
                                     <h3>Objective</h3>
                                 </div>
 
@@ -167,30 +183,30 @@
                                     <p>Creating a photography platform where property agents can request for photography services. 
                                         A 2nd site was conceptualized in order to act a freelance platform for photographers outside of Moody and Smith</p>
                                 </div>
-							
-							<div class="spacer20"></div>
+                                
+                                <div class="spacer20"></div>
                                
-							<div class="col-md-4">
+                                <div class="col-md-4">
                                     <h3>Color Identity</h3>
                                 </div>
 
                                 <div class="col-md-8">
                                     <div class="color">
-										<span data-bgcolor="#2C3383"></span>
-									</div>
-									
-									<div class="color">
-										<span data-bgcolor="#FFFFFF"></span>
-									</div>
-									
-									<div class="color">
-										<span data-bgcolor="#F37277"></span>
-									</div>
+                                        <span data-bgcolor="#2C3383"></span>
+                                    </div>
+                                    
+                                    <div class="color">
+                                        <span data-bgcolor="#FFFFFF"></span>
+                                    </div>
+                                    
+                                    <div class="color">
+                                        <span data-bgcolor="#F37277"></span>
+                                    </div>
                                 </div>
-							
-							<div class="clearfix"></div>
+                                
+                                <div class="clearfix"></div>
                             </div>
-							
+                            
                             <div id="flexbox">
                                 <div class="column">
                                 <img src="assets/images/projects/pf5/about us.png" alt="Image" width="100%" />
@@ -209,7 +225,7 @@
                                     <img src="assets/images/projects/pf5/services.png" alt="Image" width="100%" />
                                  </div>     
                               </div>
-							
+                            
 
                         </div>
 
@@ -251,3 +267,5 @@
     <script src="assets/js/designesia.js"></script>
     <script src="assets/js/gallery.js"></script>
 </body>
+
+</html>
